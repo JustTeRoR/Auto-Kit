@@ -9,5 +9,11 @@
 import Foundation
 
 enum ApiConstants {
+    //MARK: vk's part
+    static let scheme = "https"
+    static let host = "api.vk.com"
+    static let version = "5.92"
+    static let user = "/method/users.get"
+    //MARK: Auto-Kit-backend's part
     static let baseUrl = "http://localhost:8080/auto_kit/api/"
 }
