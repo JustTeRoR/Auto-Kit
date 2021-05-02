@@ -12,7 +12,6 @@
         <!--Item 2-->
         <scene sceneID="oF8-yu-gGA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gt-pZ-mha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="hP9-VZ-ePp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0BI-BW-Vuv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -22,6 +21,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="0Lp-Tp-mJf"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gt-pZ-mha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2413" y="387"/>
         </scene>
@@ -32,6 +32,12 @@
                     <view key="view" contentMode="scaleToFill" id="cr4-7j-9eT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="znu-ew-Wsz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Oqg-jx-Gqi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -39,12 +45,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gW-Yg-fb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="-222"/>
+            <point key="canvasLocation" x="2411.594202898551" y="-222.55434782608697"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="CSA-cj-AX5">
             <objects>
-                <tabBarController id="ubg-xw-iIx" customClass="MainTabBarController" customModule="Auto_Kit" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="ubg-xw-iIx" customClass="MainTabBarController" customModule="Auto_Kit" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="H4m-Iv-DQz"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oNP-Uw-gXZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -62,6 +68,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="450" height="338"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
