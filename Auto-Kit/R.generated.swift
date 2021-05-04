@@ -123,6 +123,18 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
+  struct id {
+    struct partDetailsViewController {
+      /// Accessibility identifier `AddToCart_btn`.
+      static let addToCart_btn: String = "AddToCart_btn"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `Vk_logos`.
@@ -147,6 +159,40 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `PartDetailsViewController`.
+    static let partDetailsViewController = _R.nib._PartDetailsViewController()
+    /// Nib `PartTableViewCell`.
+    static let partTableViewCell = _R.nib._PartTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PartDetailsViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.partDetailsViewController) instead")
+    static func partDetailsViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.partDetailsViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PartTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.partTableViewCell) instead")
+    static func partTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.partTableViewCell)
+    }
+    #endif
+
+    static func partDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.partDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func partTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
+      return R.nib.partTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -163,9 +209,50 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _PartDetailsViewController.validate()
+    }
+
+    struct _PartDetailsViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "PartDetailsViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "cart.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cart.fill' is used in nib 'PartDetailsViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PartTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PartTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -237,6 +324,11 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "book", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'book' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "cart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cart' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "house", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'house' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "magnifyingglass", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "wallet.pass.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wallet.pass.fill' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.mainTabBarController().mainTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarController' could not be loaded from storyboard 'MainTabBarController' as 'Auto_Kit.MainTabBarController'.") }

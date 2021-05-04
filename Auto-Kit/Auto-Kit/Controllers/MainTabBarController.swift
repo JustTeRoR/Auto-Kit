@@ -34,12 +34,9 @@ class MainTabBarController: UITabBarController, TitleViewDelegate, MainDisplayLo
         let viewController        = self
         let interactor            = MainInteractor()
         let presenter             = MainPresenter()
-        //let router                = NewsfeedRouter()
         viewController.interactor = interactor
-        //viewController.router     = router
         interactor.presenter      = presenter
         presenter.viewController  = viewController
-        //router.viewController     = viewController
     }
 
     

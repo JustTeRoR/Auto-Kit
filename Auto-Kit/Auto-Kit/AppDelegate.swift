@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AuthServiceDelegate {
     var window: UIWindow?
     var authService: AuthService!
     
+    var usingNgrok:Bool = false;
+    
     static func shared() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
@@ -27,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AuthServiceDelegate {
         authService.delegate = self
 
         let scope = ["wall", "friends"]
-
         VKSdk.wakeUpSession(scope) { (state, _) in
             if state == VKAuthorizationState.authorized {
                 self.authServiceSignIn()
@@ -37,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AuthServiceDelegate {
         }
         return true
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         VKSdk.processOpen(url, fromApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
         print("url: \(url)")
@@ -51,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AuthServiceDelegate {
 
         return true
     }
-    
+  
     // MARK: AuthServiceDelegate
     func authServiceShouldShow(_ viewController: UIViewController) {
         print(#function)
