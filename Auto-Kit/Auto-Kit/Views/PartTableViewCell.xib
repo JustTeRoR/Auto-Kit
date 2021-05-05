@@ -18,12 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbh-TX-hHm">
-                        <rect key="frame" x="133" y="0.0" width="135" height="28"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <attributedString key="attributedText">
                             <fragment content="SerialNumber">
                                 <attributes>
                                     <font key="NSFont" size="24" name="GillSans"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -66,14 +67,14 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="makeLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwj-GZ-wGk">
                         <rect key="frame" x="157" y="55" width="223" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="isOEMLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-Ai-lDD">
                         <rect key="frame" x="206" y="75" width="174" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -91,7 +92,7 @@
             <connections>
                 <outlet property="category_lbl" destination="TsX-JG-4vX" id="dmP-9O-Cme"/>
                 <outlet property="isOEM_lbl" destination="lmk-Ai-lDD" id="XO3-sT-MX3"/>
-                <outlet property="make_lbl" destination="lmk-Ai-lDD" id="Noy-mZ-PLb"/>
+                <outlet property="make_lbl" destination="Lwj-GZ-wGk" id="geL-VR-u8A"/>
                 <outlet property="quantity_lbl" destination="qlE-kY-DLt" id="J0e-FF-vbb"/>
                 <outlet property="serialNumber_lbl" destination="Vbh-TX-hHm" id="yEU-hk-Rx1"/>
             </connections>

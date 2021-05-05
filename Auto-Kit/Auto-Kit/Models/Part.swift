@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct PartsWrapped: Decodable {
     let parts: [Part]
 }
@@ -16,10 +15,13 @@ struct Part: Decodable {
     let id: Int16
     let quantity: Int8
     let measureId: Int16
+    let measureName: String
     let makeId: Int16
+    let makeName: String
     let partTypeId: Int16
-    let oem: Bool
+    let partTypeName: String
+    let isOEM: Bool
     let lastPurchasePrice: Decimal
-    //let last_delivery_time: Date
+    let lastDeliveryTime: String
     let serialNumber: String
 }

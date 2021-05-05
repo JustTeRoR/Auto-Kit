@@ -24,13 +24,13 @@ extension PartSearchViewController: UITableViewDataSource, UITableViewDelegate  
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 125
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "partCell", for: indexPath) as! PartTableViewCell
         let model = partList[indexPath.row]
-        cell.commonInit(serialNumber: model.serialNumber, category: model.partTypeId, make: model.makeId, isOEM: model.oem, quantity: model.quantity)
+        cell.commonInit(serialNumber: model.serialNumber, category: model.partTypeName, make: model.makeName, isOEM: model.isOEM, quantity: model.quantity)
         return cell
     }
 }

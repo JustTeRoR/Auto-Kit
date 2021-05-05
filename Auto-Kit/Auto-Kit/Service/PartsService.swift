@@ -20,11 +20,16 @@ class PartsService {
     
     func allPartsBySerialNumber(query: String, userId: String, access_token: String, completion: @escaping ([Part])->Void) {
         
-        let urlString = ApiConstants.baseUrl + ApiConstants.partSection + "/by_serial_number?serial_number=" + query + "&v=5.92&user_ids=" + userId + "&access_token="+access_token
+        let urlString = ApiConstants.baseUrl + ApiConstants.partSection + "/by_serial_number?serial_number=" + query + "&user_ids=" + userId + "&access_token="+access_token
         sessionManager.request(urlString).response { response in
             guard let data = response.data else { return }
-            let appropriatePartList: [Part] = try! JSONDecoder().decode([Part].self, from: data)
-            completion(appropriatePartList)
+            do {
+                let appropriatePartList: [Part] = try JSONDecoder().decode([Part].self, from: data)
+                completion(appropriatePartList)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
         }
     }
     
