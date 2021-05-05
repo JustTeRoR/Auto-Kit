@@ -12,10 +12,11 @@ import Alamofire
 class PartSearchViewController: UIViewController {
     
     open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
-            open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
-                return ServerTrustPolicy.disableEvaluation
-            }
+        open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+            return ServerTrustPolicy.disableEvaluation
         }
+    }
+
     let sessionManager = SessionManager(delegate:SessionDelegate(), serverTrustPolicyManager:MyServerTrustPolicyManager(policies: [:]))
     
     

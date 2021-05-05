@@ -12,6 +12,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartDetailsViewController" customModule="Auto_Kit" customModuleProvider="target">
             <connections>
+                <outlet property="addToCartButton" destination="0Ny-sy-oGl" id="Vh1-5Q-12f"/>
+                <outlet property="isOem" destination="Mqx-yV-BHb" id="4Tp-uR-RdC"/>
+                <outlet property="lastDeliverTime" destination="VWb-no-CmW" id="dRC-vF-LlP"/>
+                <outlet property="lastPrice" destination="3cL-TL-g7t" id="NvW-qe-9zg"/>
+                <outlet property="make" destination="jFU-OD-ouc" id="Nxh-t7-89k"/>
+                <outlet property="measure" destination="2Ag-Mi-W3B" id="Ozd-zc-fyT"/>
+                <outlet property="partType" destination="dm0-hl-byP" id="fKJ-SF-6de"/>
+                <outlet property="quantity" destination="fcZ-Yr-Vfq" id="R4q-U9-ppK"/>
+                <outlet property="replacementTableView" destination="w2s-s8-Pjl" id="vly-6P-cev"/>
+                <outlet property="serialNumber" destination="At3-H0-mIv" id="zOp-yi-iY0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,26 +30,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-Cl-sxe">
-                    <rect key="frame" x="13" y="363" width="392" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Аналоги от других производителей:">
-                            <attributes>
-                                <font key="NSFont" size="30" name="GillSans"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w2s-s8-Pjl">
-                    <rect key="frame" x="13" y="441" width="381" height="275"/>
+                    <rect key="frame" x="13" y="385" width="381" height="331"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At3-H0-mIv">
-                    <rect key="frame" x="120" y="65" width="169" height="35"/>
+                    <rect key="frame" x="119" y="32" width="169" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="SerialNumber">
@@ -52,7 +49,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb7-w3-rEQ">
-                    <rect key="frame" x="17" y="111" width="75" height="28"/>
+                    <rect key="frame" x="15" y="55" width="75" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Кол-во:">
@@ -65,7 +62,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-Yr-Vfq">
-                    <rect key="frame" x="102" y="111" width="289" height="27"/>
+                    <rect key="frame" x="100" y="55" width="289" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="count">
@@ -78,7 +75,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLc-J7-yYc">
-                    <rect key="frame" x="17" y="147" width="58" height="28"/>
+                    <rect key="frame" x="15" y="91" width="58" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Мера:">
@@ -91,7 +88,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-Mi-W3B">
-                    <rect key="frame" x="83" y="148" width="308" height="27"/>
+                    <rect key="frame" x="81" y="92" width="308" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="measure">
@@ -104,7 +101,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBH-sR-C6w">
-                    <rect key="frame" x="17" y="183" width="162" height="28"/>
+                    <rect key="frame" x="15" y="127" width="162" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Производитель:">
@@ -117,7 +114,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-OD-ouc">
-                    <rect key="frame" x="187" y="184" width="204" height="27"/>
+                    <rect key="frame" x="185" y="128" width="204" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="make">
@@ -130,7 +127,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROe-7y-vvI">
-                    <rect key="frame" x="17" y="219" width="111" height="28"/>
+                    <rect key="frame" x="15" y="163" width="111" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Категория:">
@@ -143,7 +140,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-hl-byP">
-                    <rect key="frame" x="136" y="220" width="255" height="27"/>
+                    <rect key="frame" x="134" y="164" width="255" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="part_type">
@@ -156,7 +153,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUC-NC-PJS">
-                    <rect key="frame" x="17" y="255" width="229" height="28"/>
+                    <rect key="frame" x="15" y="199" width="229" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Оригинал/Заменитель:">
@@ -169,7 +166,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqx-yV-BHb">
-                    <rect key="frame" x="254" y="255" width="148" height="27"/>
+                    <rect key="frame" x="252" y="199" width="148" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="is_oem">
@@ -182,7 +179,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ba-fk-ntZ">
-                    <rect key="frame" x="17" y="291" width="260" height="28"/>
+                    <rect key="frame" x="15" y="235" width="260" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="Последняя цена покупки:">
@@ -195,7 +192,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cL-TL-g7t">
-                    <rect key="frame" x="277" y="291" width="114" height="28"/>
+                    <rect key="frame" x="275" y="235" width="114" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="last_price">
@@ -208,10 +205,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lm-Bx-cfx">
-                    <rect key="frame" x="17" y="326" width="263" height="28"/>
+                    <rect key="frame" x="15" y="270" width="211" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
-                        <fragment content="Последняя дата доставки:">
+                        <fragment content="Последняя доставка:">
                             <attributes>
                                 <font key="NSFont" size="24" name="GillSans"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -220,8 +217,8 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-no-CmW">
-                    <rect key="frame" x="288" y="327" width="104" height="28"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-no-CmW">
+                    <rect key="frame" x="234" y="271" width="160" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment content="last_delive">
@@ -233,13 +230,29 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-Cl-sxe">
+                    <rect key="frame" x="11" y="307" width="392" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Аналоги от других производителей:">
+                            <attributes>
+                                <font key="NSFont" size="30" name="GillSans"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ny-sy-oGl">
-                    <rect key="frame" x="303" y="111" width="88" height="45"/>
+                    <rect key="frame" x="301" y="55" width="88" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" identifier="AddToCart_btn"/>
                     <state key="normal">
                         <imageReference key="image" image="cart.fill" catalog="system" symbolScale="large"/>
                     </state>
+                    <connections>
+                        <action selector="addToCartButtonPush:" destination="-1" eventType="touchUpInside" id="A0P-tI-Knb"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
