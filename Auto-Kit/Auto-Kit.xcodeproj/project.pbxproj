@@ -38,6 +38,7 @@
 		8087F4CA264006F30073EDEE /* PartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F4C9264006F30073EDEE /* PartsService.swift */; };
 		8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */; };
 		8087F50C264304760073EDEE /* CertificateCheckOffForDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F50B264304760073EDEE /* CertificateCheckOffForDebug.swift */; };
+		80B79DE526433D2700815D69 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */; };
 		80B90B15263974A8007E061E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B14263974A8007E061E /* AppDelegate.swift */; };
 		80B90B17263974A8007E061E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B16263974A8007E061E /* SceneDelegate.swift */; };
 		80B90B19263974A8007E061E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B18263974A8007E061E /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 		8087F4C9264006F30073EDEE /* PartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsService.swift; sourceTree = "<group>"; };
 		8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PartDetailsViewController+tableView.swift"; sourceTree = "<group>"; };
 		8087F50B264304760073EDEE /* CertificateCheckOffForDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCheckOffForDebug.swift; sourceTree = "<group>"; };
+		80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		80B90B11263974A8007E061E /* Auto-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B90B14263974A8007E061E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B90B16263974A8007E061E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8087F4BD263F13450073EDEE /* PartSearchViewController.swift */,
 				8087F4C3263FFB7F0073EDEE /* PartDetailsViewController.swift */,
 				8087F4C4263FFB7F0073EDEE /* PartDetailsViewController.xib */,
+				80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				8087F49C263C54010073EDEE /* UIViewController+Storyboard.swift in Sources */,
 				8087F50C264304760073EDEE /* CertificateCheckOffForDebug.swift in Sources */,
 				802660D52639962D00CDC1AD /* UIViewController+loadBackground.swift in Sources */,
+				80B79DE526433D2700815D69 /* ShoppingCartViewController.swift in Sources */,
 				8087F4C5263FFB7F0073EDEE /* PartDetailsViewController.swift in Sources */,
 				8087F4CA264006F30073EDEE /* PartsService.swift in Sources */,
 				8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */,

@@ -135,12 +135,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `ApplicationLogo`.
+    static let applicationLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ApplicationLogo")
     /// Image `Vk_logos`.
     static let vk_logos = Rswift.ImageResource(bundle: R.hostingBundle, name: "Vk_logos")
     /// Image `background`.
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ApplicationLogo", bundle: ..., traitCollection: ...)`
+    static func applicationLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.applicationLogo, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Vk_logos", bundle: ..., traitCollection: ...)`
@@ -323,6 +332,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ApplicationLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ApplicationLogo' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "book", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'book' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "cart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cart' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
