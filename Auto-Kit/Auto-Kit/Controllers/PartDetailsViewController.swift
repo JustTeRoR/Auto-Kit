@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class PartDetailsViewController: UIViewController {
+    
+    open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
+        open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+            return ServerTrustPolicy.disableEvaluation
+        }
+    }
+
+    let sessionManager = SessionManager(delegate:SessionDelegate(), serverTrustPolicyManager:MyServerTrustPolicyManager(policies: [:]))
 
     // MARK: - IBOutlets
     @IBOutlet weak var addToCartButton: UIButton!
@@ -34,6 +43,7 @@ class PartDetailsViewController: UIViewController {
         self.loadBackground()
         replacementTableView.backgroundColor = UIColor.clear
         detailsPartInit(serialNumber: partModel.serialNumber, category: partModel.partTypeName, make: partModel.makeName, isOEM: partModel.isOEM, quantity: partModel.quantity, lastDeliveryDate: partModel.lastDeliveryTime, lastPricePurchase: partModel.lastPurchasePrice, measure: partModel.measureName)
+        loadReplacementPartsById(part_id1: partModel.id)
     }
 
     @IBAction func addToCartButtonPush(_ sender: Any) {
@@ -53,5 +63,16 @@ class PartDetailsViewController: UIViewController {
         // Restore the navigation bar to default
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    // MARK: - function for loading parts by serial number
+    func loadReplacementPartsById(part_id1: Int16)
+    {
+        let service = PartsService(SessionManager: self.sessionManager)
+        service.allReplacementPartsByPartId(part_id1: part_id1, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (parts) in
+            self?.replacePartList = parts
+            print("parts for replacement count \(self!.replacePartList.count)" )
+            self?.replacementTableView.reloadData()
+        })
     }
 }

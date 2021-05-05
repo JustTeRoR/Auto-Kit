@@ -17,4 +17,5 @@ enum ApiConstants {
     //MARK: Auto-Kit-backend's part
     static let baseUrl = "https://localhost:8443/auto_kit/api/"
     static let partSection = "part"
+    static let replaceabilitySection = "replaceability"
 }

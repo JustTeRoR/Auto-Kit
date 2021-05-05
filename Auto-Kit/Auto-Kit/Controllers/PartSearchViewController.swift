@@ -21,7 +21,6 @@ class PartSearchViewController: UIViewController {
     
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var partsTableView: UITableView!
     @IBOutlet weak var partsSearchBar: UISearchBar!
     var partList = [Part]()
