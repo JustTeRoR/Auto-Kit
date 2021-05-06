@@ -41,13 +41,40 @@ class ShoppingCartViewController: UIViewController {
         loadOrderPartsById()
     }
     
+    //TO check if this works
+    override func viewWillAppear(_ animated: Bool) {
+        loadOrderPartsById()
+        DispatchQueue.main.async{
+            self.shoppingCartItemsTable.reloadData()
+        }
+    }
+    
     @IBAction func deleteAllItems(_ sender: Any) {
     }
     
     @IBAction func deleteSelectedItems(_ sender: Any) {
+        let toDelete = formIdiciesForDeleting(selectedRows: selectedRows.map { $0[1] })
+        print(toDelete)
+        if !toDelete.isEmpty {
+            self.service.deleteProductsFromShoppingCartByStrIds(strOrderPartIds: toDelete, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { }
+            DispatchQueue.main.async{
+                self.shoppingCartItemsTable.reloadData()
+            }
+        }
+    }
+    
+    func formIdiciesForDeleting(selectedRows: [IndexPath.Element]) -> String {
+        var result = ""
+        for element in selectedRows {
+            result.append(String(orderPartList[element].id) + ",")
+            orderPartList.remove(at: element)
+        }
+        self.selectedRows.removeAll()
+        return String(result.dropLast())
     }
     
     @IBAction func placeOrderButtonTapped(_ sender: Any) {
+        
     }
     
     func uiDesignInit() {
@@ -58,6 +85,14 @@ class ShoppingCartViewController: UIViewController {
         finalSumPrefix.text = "Всего с вас: 0 руб."
         shoppingCartItemsCountLabel.text = "                                                          Товаров в вашей корзине: 0"
     }
+    
+    func getAllIndexPaths() -> [IndexPath] {
+        var indexPaths: [IndexPath] = []
+          for j in 0..<shoppingCartItemsTable.numberOfRows(inSection: 0) {
+            indexPaths.append(IndexPath(row: j, section: 0))
+          }
+            return indexPaths
+      }
     
     // MARK: - function for loading shopping cart items by User Id
     func loadOrderPartsById()

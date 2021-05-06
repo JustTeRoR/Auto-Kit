@@ -47,7 +47,8 @@ class PartDetailsViewController: UIViewController {
     }
 
     @IBAction func addToCartButtonPush(_ sender: Any) {
-        
+        //FIXME:: configure new view to let user select partProvider Dynamically
+        AddProductToShoppingCart(partId: partModel.id, partProviderId: 1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +64,11 @@ class PartDetailsViewController: UIViewController {
         // Restore the navigation bar to default
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    func AddProductToShoppingCart(partId:Int16, partProviderId:Int16) {
+        let service = OrderPartService(SessionManager: self.sessionManager)
+        service.AddProductToShoppingCart(partId: partId, partProviderId: partProviderId, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { })
     }
     
     // MARK: - function for loading replacement parts by ID

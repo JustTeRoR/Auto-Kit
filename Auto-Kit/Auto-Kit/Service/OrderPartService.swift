@@ -37,4 +37,15 @@ class OrderPartService {
         sessionManager.request(urlString, method: .put)
         print("request on count updating for orderPartId = \(orderPartId) to count \(count)")
     }
+    
+    func AddProductToShoppingCart (partId: Int16, partProviderId: Int16, userId: String, access_token: String, completion: () -> Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.orderPartSection + "/add_order_part?part_provider_id=\(partProviderId)&part_id=\(partId)&user_ids=\(userId)&access_token=\(access_token)"
+        sessionManager.request(urlString, method: .post)
+        print("request on count updating for partId = \(partId) with part provider \(partProviderId)")    }
+    
+    func deleteProductsFromShoppingCartByStrIds(strOrderPartIds: String, userId: String, access_token: String, completion: () -> Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.orderPartSection + "/delete_multi_by_id?string_ids=\(strOrderPartIds)&user_ids=\(userId)&access_token=\(access_token)"
+        sessionManager.request(urlString, method: .delete)
+        print("request on deleting items from shopping cart with strIds \(strOrderPartIds)")
+    }
 }

@@ -27,11 +27,9 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
         cell.checkBoxButton.tag = indexPath.row
         cell.checkBoxButton.addTarget(self, action: #selector(checkBoxSelection(_:)), for: .touchUpInside)
         
-        // set the "callback' closure
         cell.callback = { (val) in
             self.service.updateCountInShoppingList(orderPartId: model.id, count: Int8(val), userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) {}
         }
-        
         cell.commonInit(orderPart: model)
         return cell
     }
