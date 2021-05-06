@@ -234,7 +234,10 @@
                     <rect key="frame" x="301" y="55" width="88" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" identifier="AddToCart_btn"/>
+                    <color key="tintColor" red="1" green="0.56663653410000003" blue="0.34273872570000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal">
+                        <color key="titleColor" red="1" green="0.56663653410000003" blue="0.34273872570000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleShadowColor" red="1" green="0.56663653410000003" blue="0.34273872570000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <imageReference key="image" image="cart.fill" catalog="system" symbolScale="large"/>
                     </state>
                     <connections>

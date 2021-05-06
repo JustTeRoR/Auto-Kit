@@ -56,7 +56,6 @@ class TitleView: UIView {
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         buttonLogOutSession.addTarget(self, action: #selector(buttonLogOut), for: .touchUpInside)
 
         translatesAutoresizingMaskIntoConstraints = false

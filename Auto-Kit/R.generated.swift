@@ -135,12 +135,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `ApplicationLogo`.
+    static let applicationLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ApplicationLogo")
     /// Image `Vk_logos`.
     static let vk_logos = Rswift.ImageResource(bundle: R.hostingBundle, name: "Vk_logos")
     /// Image `background`.
     static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ApplicationLogo", bundle: ..., traitCollection: ...)`
+    static func applicationLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.applicationLogo, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Vk_logos", bundle: ..., traitCollection: ...)`
@@ -159,12 +168,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `PartDetailsViewController`.
     static let partDetailsViewController = _R.nib._PartDetailsViewController()
     /// Nib `PartTableViewCell`.
     static let partTableViewCell = _R.nib._PartTableViewCell()
+    /// Nib `ShoppingCartTableViewCell`.
+    static let shoppingCartTableViewCell = _R.nib._ShoppingCartTableViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "PartDetailsViewController", in: bundle)`
@@ -182,12 +193,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ShoppingCartTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.shoppingCartTableViewCell) instead")
+    static func shoppingCartTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.shoppingCartTableViewCell)
+    }
+    #endif
+
     static func partDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.partDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func partTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
       return R.nib.partTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+    }
+
+    static func shoppingCartTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ShoppingCartTableViewCell? {
+      return R.nib.shoppingCartTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ShoppingCartTableViewCell
     }
 
     fileprivate init() {}
@@ -245,6 +268,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ShoppingCartTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ShoppingCartTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ShoppingCartTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ShoppingCartTableViewCell
       }
 
       fileprivate init() {}
@@ -323,6 +357,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "ApplicationLogo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ApplicationLogo' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "book", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'book' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "cart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cart' is used in storyboard 'MainTabBarController', but couldn't be loaded.") }

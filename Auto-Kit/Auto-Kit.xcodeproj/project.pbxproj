@@ -38,6 +38,10 @@
 		8087F4CA264006F30073EDEE /* PartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F4C9264006F30073EDEE /* PartsService.swift */; };
 		8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */; };
 		8087F50C264304760073EDEE /* CertificateCheckOffForDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8087F50B264304760073EDEE /* CertificateCheckOffForDebug.swift */; };
+		80B79DE526433D2700815D69 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */; };
+		80B79DE82643EDCA00815D69 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DE62643EDCA00815D69 /* ShoppingCartTableViewCell.swift */; };
+		80B79DE92643EDCA00815D69 /* ShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */; };
+		80B79DEB264437C700815D69 /* ShoppingCartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */; };
 		80B90B15263974A8007E061E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B14263974A8007E061E /* AppDelegate.swift */; };
 		80B90B17263974A8007E061E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B16263974A8007E061E /* SceneDelegate.swift */; };
 		80B90B19263974A8007E061E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B18263974A8007E061E /* ViewController.swift */; };
@@ -91,6 +95,10 @@
 		8087F4C9264006F30073EDEE /* PartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsService.swift; sourceTree = "<group>"; };
 		8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PartDetailsViewController+tableView.swift"; sourceTree = "<group>"; };
 		8087F50B264304760073EDEE /* CertificateCheckOffForDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCheckOffForDebug.swift; sourceTree = "<group>"; };
+		80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		80B79DE62643EDCA00815D69 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
+		80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingCartView+TableView.swift"; sourceTree = "<group>"; };
 		80B90B11263974A8007E061E /* Auto-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B90B14263974A8007E061E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B90B16263974A8007E061E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				8087F4BF263F2E0D0073EDEE /* PartSearchViewController+tableView.swift */,
 				8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */,
 				8087F50B264304760073EDEE /* CertificateCheckOffForDebug.swift */,
+				80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 				8087F4BD263F13450073EDEE /* PartSearchViewController.swift */,
 				8087F4C3263FFB7F0073EDEE /* PartDetailsViewController.swift */,
 				8087F4C4263FFB7F0073EDEE /* PartDetailsViewController.xib */,
+				80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +268,8 @@
 				8087F4A9263D88420073EDEE /* WebImageView.swift */,
 				8087F4B9263EB61F0073EDEE /* PartTableViewCell.swift */,
 				8087F4BA263EB61F0073EDEE /* PartTableViewCell.xib */,
+				80B79DE62643EDCA00815D69 /* ShoppingCartTableViewCell.swift */,
+				80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +384,7 @@
 				8087F4772639AB000073EDEE /* MainTabBarController.storyboard in Resources */,
 				8087F4C6263FFB7F0073EDEE /* PartDetailsViewController.xib in Resources */,
 				8087F4BC263EB61F0073EDEE /* PartTableViewCell.xib in Resources */,
+				80B79DE92643EDCA00815D69 /* ShoppingCartTableViewCell.xib in Resources */,
 				80B90B1E263974A9007E061E /* Assets.xcassets in Resources */,
 				8087F47B2639C1ED0073EDEE /* LoginViewController.storyboard in Resources */,
 			);
@@ -467,11 +480,13 @@
 				8087F4A4263D825E0073EDEE /* UserResponse.swift in Sources */,
 				8087F4C0263F2E0D0073EDEE /* PartSearchViewController+tableView.swift in Sources */,
 				802660CA2639848400CDC1AD /* OrderPart.swift in Sources */,
+				80B79DEB264437C700815D69 /* ShoppingCartView+TableView.swift in Sources */,
 				80B90B19263974A8007E061E /* ViewController.swift in Sources */,
 				8087F4C82640067B0073EDEE /* ServiceErrors.swift in Sources */,
 				8087F49C263C54010073EDEE /* UIViewController+Storyboard.swift in Sources */,
 				8087F50C264304760073EDEE /* CertificateCheckOffForDebug.swift in Sources */,
 				802660D52639962D00CDC1AD /* UIViewController+loadBackground.swift in Sources */,
+				80B79DE526433D2700815D69 /* ShoppingCartViewController.swift in Sources */,
 				8087F4C5263FFB7F0073EDEE /* PartDetailsViewController.swift in Sources */,
 				8087F4CA264006F30073EDEE /* PartsService.swift in Sources */,
 				8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */,
@@ -480,6 +495,7 @@
 				8087F49A263C46850073EDEE /* AuthService.swift in Sources */,
 				80B90B15263974A8007E061E /* AppDelegate.swift in Sources */,
 				8087F4BB263EB61F0073EDEE /* PartTableViewCell.swift in Sources */,
+				80B79DE82643EDCA00815D69 /* ShoppingCartTableViewCell.swift in Sources */,
 				8087F4A0263C58B50073EDEE /* NetworkService.swift in Sources */,
 				8087F4B4263E77840073EDEE /* MainModels.swift in Sources */,
 				8087F4C2263F4C790073EDEE /* Part.swift in Sources */,
