@@ -65,7 +65,7 @@ class PartDetailsViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = nil
     }
     
-    // MARK: - function for loading parts by serial number
+    // MARK: - function for loading replacement parts by ID
     func loadReplacementPartsById(part_id1: Int16)
     {
         let service = PartsService(SessionManager: self.sessionManager)

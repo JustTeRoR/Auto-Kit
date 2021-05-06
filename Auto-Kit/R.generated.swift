@@ -243,6 +243,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _PartDetailsViewController.validate()
+      try _ShoppingCartTableViewCell.validate()
     }
 
     struct _PartDetailsViewController: Rswift.NibResourceType, Rswift.Validatable {
@@ -273,12 +274,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _ShoppingCartTableViewCell: Rswift.NibResourceType {
+    struct _ShoppingCartTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "ShoppingCartTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ShoppingCartTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ShoppingCartTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "checkmark.seal", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkmark.seal' is used in nib 'ShoppingCartTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

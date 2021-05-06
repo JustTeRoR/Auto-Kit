@@ -8,8 +8,17 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class ShoppingCartViewController: UIViewController {
+    
+    open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
+        open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+            return ServerTrustPolicy.disableEvaluation
+        }
+    }
+    let sessionManager = SessionManager(delegate:SessionDelegate(), serverTrustPolicyManager:MyServerTrustPolicyManager(policies: [:]))
+    var service: OrderPartService!
     
     @IBOutlet weak var appLogo: UIImageView!
     @IBOutlet weak var deleteSelectedButton: UIButton!
@@ -24,12 +33,12 @@ class ShoppingCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiDesignInit()
+        shoppingCartItemsTable.allowsSelection = false
         shoppingCartItemsTable.dataSource = self
         shoppingCartItemsTable.delegate = self
         shoppingCartItemsTable.register(UINib(nibName: "ShoppingCartTableViewCell", bundle: nil),forCellReuseIdentifier: "shopCartCell")
         shoppingCartItemsTable.delegate = self
-        
-        
+        loadOrderPartsById()
     }
     
     @IBAction func deleteAllItems(_ sender: Any) {
@@ -47,6 +56,21 @@ class ShoppingCartViewController: UIViewController {
         finalSumPrefix.layer.borderWidth = 3
         finalSumPrefix.layer.borderColor = UIColor.black.cgColor
         finalSumPrefix.text = "Всего с вас: 0 руб."
-        shoppingCartItemsCountLabel.text = "                                                          В вашей корзине 0 товаров"
+        shoppingCartItemsCountLabel.text = "                                                          Товаров в вашей корзине: 0"
+    }
+    
+    // MARK: - function for loading shopping cart items by User Id
+    func loadOrderPartsById()
+    {
+        self.service = OrderPartService(SessionManager: self.sessionManager)
+        service.getAllOrderPartsByUserId(userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (orderParts) in
+            self?.orderPartList = orderParts
+            self?.shoppingCartItemsCountLabel.text = "                                                          Товаров в вашей корзине: \(self!.orderPartList.count)"
+            let prices = orderParts.map { $0.price }
+            let finalPrice = prices.reduce(0, +)
+            self?.finalSumPrefix.text = "Всего с вас: \(finalPrice) руб."
+            print("order parts in shopping cart count \(self!.orderPartList.count)" )
+            self?.shoppingCartItemsTable.reloadData()
+        })
     }
 }
