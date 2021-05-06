@@ -36,25 +36,78 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSn-mP-wW7">
+                                <rect key="frame" x="20" y="60" width="151" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Удалить выделенное">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteSelectedItems:" destination="5OK-d8-3DV" eventType="touchUpInside" id="DDG-vv-DDH"/>
+                                </connections>
+                            </button>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ApplicationLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1ZA-So-fQy">
                                 <rect key="frame" x="119" y="60" width="176" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwq-6h-b9K">
-                                <rect key="frame" x="249" y="60" width="145" height="50"/>
+                                <rect key="frame" x="249" y="60" width="145" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Очистить все">
                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteAllItems:" destination="5OK-d8-3DV" eventType="touchUpInside" id="X96-ep-BAM"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hJn-QF-86X">
+                                <rect key="frame" x="0.0" y="141" width="414" height="423"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTC-9n-vpF">
+                                <rect key="frame" x="0.0" y="619" width="414" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Сделать заказ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="placeOrderButtonTapped:" destination="5OK-d8-3DV" eventType="touchUpInside" id="hNI-5v-TWd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-iG-lff">
+                                <rect key="frame" x="0.0" y="565" width="414" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Всего с вас:  %d руб.">
+                                        <attributes>
+                                            <font key="NSFont" size="32" name="GillSans-LightItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YRP-ja-Qaq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Корзина" image="cart" catalog="system" id="FMQ-PM-pGL"/>
                     <navigationItem key="navigationItem" id="WI1-IY-HcF"/>
+                    <connections>
+                        <outlet property="appLogo" destination="1ZA-So-fQy" id="HA3-PK-Yli"/>
+                        <outlet property="deleteAllButton" destination="Gwq-6h-b9K" id="10J-C0-8rH"/>
+                        <outlet property="deleteSelectedButton" destination="mSn-mP-wW7" id="Qw0-Cf-3Wz"/>
+                        <outlet property="finalSumPrefix" destination="Y1Y-iG-lff" id="Fwm-Xb-fzG"/>
+                        <outlet property="placeOrderButton" destination="NTC-9n-vpF" id="yp5-3k-ldz"/>
+                        <outlet property="shoppingCartItemsCountLabel" destination="NcY-Ww-Ucm" id="AfY-QZ-28X"/>
+                        <outlet property="shoppingCartItemsTable" destination="hJn-QF-86X" id="Tbs-Sl-hpc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iep-iF-Nuc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
