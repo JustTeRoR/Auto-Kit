@@ -50,15 +50,27 @@ class ShoppingCartViewController: UIViewController {
     }
     
     @IBAction func deleteAllItems(_ sender: Any) {
-    }
-    
-    @IBAction func deleteSelectedItems(_ sender: Any) {
-        let toDelete = formIdiciesForDeleting(selectedRows: selectedRows.map { $0[1] })
-        print(toDelete)
+        let toDelete = formIdiciesForDeleting(selectedRows: getAllIndexPaths().map{ $0[1] } )
+
         if !toDelete.isEmpty {
             self.service.deleteProductsFromShoppingCartByStrIds(strOrderPartIds: toDelete, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { }
             DispatchQueue.main.async{
                 self.shoppingCartItemsTable.reloadData()
+                self.uiDesignInit()
+            }
+        }
+    }
+    
+    @IBAction func deleteSelectedItems(_ sender: Any) {
+        let toDelete = formIdiciesForDeleting(selectedRows: selectedRows.map { $0[1] })
+        if !toDelete.isEmpty {
+            self.service.deleteProductsFromShoppingCartByStrIds(strOrderPartIds: toDelete, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { }
+            DispatchQueue.main.async{
+                self.shoppingCartItemsTable.reloadData()
+                self.shoppingCartItemsCountLabel.text = "                                                          Товаров в вашей корзине: \(self.orderPartList.count)"
+                let prices = self.orderPartList.map { $0.price }
+                let finalPrice = prices.reduce(0, +)
+                self.finalSumPrefix.text = "Всего с вас: \(finalPrice) руб."
             }
         }
     }
@@ -67,7 +79,13 @@ class ShoppingCartViewController: UIViewController {
         var result = ""
         for element in selectedRows {
             result.append(String(orderPartList[element].id) + ",")
-            orderPartList.remove(at: element)
+        }
+        if (selectedRows.count != self.orderPartList.count) {
+            for element in selectedRows {
+                self.orderPartList.remove(at: element)
+            }
+        } else {
+            self.orderPartList.removeAll()
         }
         self.selectedRows.removeAll()
         return String(result.dropLast())
@@ -104,7 +122,6 @@ class ShoppingCartViewController: UIViewController {
             let prices = orderParts.map { $0.price }
             let finalPrice = prices.reduce(0, +)
             self?.finalSumPrefix.text = "Всего с вас: \(finalPrice) руб."
-            print("order parts in shopping cart count \(self!.orderPartList.count)" )
             self?.shoppingCartItemsTable.reloadData()
         })
     }
