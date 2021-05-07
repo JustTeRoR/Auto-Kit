@@ -42,6 +42,9 @@
 		80B79DE92643EDCA00815D69 /* ShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */; };
 		80B79DEB264437C700815D69 /* ShoppingCartView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */; };
 		80B79DEE2644403800815D69 /* OrderPartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DED2644403800815D69 /* OrderPartService.swift */; };
+		80B79DF026454FC800815D69 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DEF26454FC800815D69 /* OrdersViewController.swift */; };
+		80B79DF3264551AC00815D69 /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DF1264551AC00815D69 /* OrdersTableViewCell.swift */; };
+		80B79DF4264551AC00815D69 /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B79DF2264551AC00815D69 /* OrdersTableViewCell.xib */; };
 		80B90B15263974A8007E061E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B14263974A8007E061E /* AppDelegate.swift */; };
 		80B90B17263974A8007E061E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B16263974A8007E061E /* SceneDelegate.swift */; };
 		80B90B19263974A8007E061E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B18263974A8007E061E /* ViewController.swift */; };
@@ -99,6 +102,9 @@
 		80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
 		80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingCartView+TableView.swift"; sourceTree = "<group>"; };
 		80B79DED2644403800815D69 /* OrderPartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPartService.swift; sourceTree = "<group>"; };
+		80B79DEF26454FC800815D69 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		80B79DF1264551AC00815D69 /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
+		80B79DF2264551AC00815D69 /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
 		80B90B11263974A8007E061E /* Auto-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B90B14263974A8007E061E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B90B16263974A8007E061E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				8087F4C3263FFB7F0073EDEE /* PartDetailsViewController.swift */,
 				8087F4C4263FFB7F0073EDEE /* PartDetailsViewController.xib */,
 				80B79DE426433D2700815D69 /* ShoppingCartViewController.swift */,
+				80B79DEF26454FC800815D69 /* OrdersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +276,8 @@
 				8087F4BA263EB61F0073EDEE /* PartTableViewCell.xib */,
 				80B79DE62643EDCA00815D69 /* ShoppingCartTableViewCell.swift */,
 				80B79DE72643EDCA00815D69 /* ShoppingCartTableViewCell.xib */,
+				80B79DF1264551AC00815D69 /* OrdersTableViewCell.swift */,
+				80B79DF2264551AC00815D69 /* OrdersTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +391,7 @@
 			files = (
 				80B90B21263974A9007E061E /* LaunchScreen.storyboard in Resources */,
 				8087F4772639AB000073EDEE /* MainTabBarController.storyboard in Resources */,
+				80B79DF4264551AC00815D69 /* OrdersTableViewCell.xib in Resources */,
 				8087F4C6263FFB7F0073EDEE /* PartDetailsViewController.xib in Resources */,
 				8087F4BC263EB61F0073EDEE /* PartTableViewCell.xib in Resources */,
 				80B79DE92643EDCA00815D69 /* ShoppingCartTableViewCell.xib in Resources */,
@@ -490,12 +500,14 @@
 				8087F4CA264006F30073EDEE /* PartsService.swift in Sources */,
 				8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */,
 				80B90B4026397E89007E061E /* ApiConstants.swift in Sources */,
+				80B79DF3264551AC00815D69 /* OrdersTableViewCell.swift in Sources */,
 				8087F4A8263D87990073EDEE /* R.generated.swift in Sources */,
 				8087F49A263C46850073EDEE /* AuthService.swift in Sources */,
 				80B79DEE2644403800815D69 /* OrderPartService.swift in Sources */,
 				80B90B15263974A8007E061E /* AppDelegate.swift in Sources */,
 				8087F4BB263EB61F0073EDEE /* PartTableViewCell.swift in Sources */,
 				80B79DE82643EDCA00815D69 /* ShoppingCartTableViewCell.swift in Sources */,
+				80B79DF026454FC800815D69 /* OrdersViewController.swift in Sources */,
 				8087F4A0263C58B50073EDEE /* NetworkService.swift in Sources */,
 				8087F4B4263E77840073EDEE /* MainModels.swift in Sources */,
 				8087F4C2263F4C790073EDEE /* Part.swift in Sources */,

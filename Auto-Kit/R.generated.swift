@@ -168,14 +168,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `OrdersTableViewCell`.
+    static let ordersTableViewCell = _R.nib._OrdersTableViewCell()
     /// Nib `PartDetailsViewController`.
     static let partDetailsViewController = _R.nib._PartDetailsViewController()
     /// Nib `PartTableViewCell`.
     static let partTableViewCell = _R.nib._PartTableViewCell()
     /// Nib `ShoppingCartTableViewCell`.
     static let shoppingCartTableViewCell = _R.nib._ShoppingCartTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "OrdersTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.ordersTableViewCell) instead")
+    static func ordersTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.ordersTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "PartDetailsViewController", in: bundle)`
@@ -200,6 +210,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.shoppingCartTableViewCell)
     }
     #endif
+
+    static func ordersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OrdersTableViewCell? {
+      return R.nib.ordersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OrdersTableViewCell
+    }
 
     static func partDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.partDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -242,8 +256,26 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _OrdersTableViewCell.validate()
       try _PartDetailsViewController.validate()
       try _ShoppingCartTableViewCell.validate()
+    }
+
+    struct _OrdersTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "OrdersTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OrdersTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OrdersTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "delete.left.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'delete.left.fill' is used in nib 'OrdersTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _PartDetailsViewController: Rswift.NibResourceType, Rswift.Validatable {
