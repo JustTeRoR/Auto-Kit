@@ -45,6 +45,8 @@
 		80B79DF026454FC800815D69 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DEF26454FC800815D69 /* OrdersViewController.swift */; };
 		80B79DF3264551AC00815D69 /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DF1264551AC00815D69 /* OrdersTableViewCell.swift */; };
 		80B79DF4264551AC00815D69 /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80B79DF2264551AC00815D69 /* OrdersTableViewCell.xib */; };
+		80B79DF6264575E200815D69 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DF5264575E200815D69 /* OrderService.swift */; };
+		80B79DF826457A6A00815D69 /* OrdersViewController+tableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B79DF726457A6A00815D69 /* OrdersViewController+tableVIew.swift */; };
 		80B90B15263974A8007E061E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B14263974A8007E061E /* AppDelegate.swift */; };
 		80B90B17263974A8007E061E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B16263974A8007E061E /* SceneDelegate.swift */; };
 		80B90B19263974A8007E061E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B90B18263974A8007E061E /* ViewController.swift */; };
@@ -105,6 +107,8 @@
 		80B79DEF26454FC800815D69 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		80B79DF1264551AC00815D69 /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
 		80B79DF2264551AC00815D69 /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
+		80B79DF5264575E200815D69 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		80B79DF726457A6A00815D69 /* OrdersViewController+tableVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersViewController+tableVIew.swift"; sourceTree = "<group>"; };
 		80B90B11263974A8007E061E /* Auto-Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto-Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B90B14263974A8007E061E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B90B16263974A8007E061E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				8087F4BF263F2E0D0073EDEE /* PartSearchViewController+tableView.swift */,
 				8087F509264302AB0073EDEE /* PartDetailsViewController+tableView.swift */,
 				80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */,
+				80B79DF726457A6A00815D69 /* OrdersViewController+tableVIew.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				8087F4C72640067B0073EDEE /* ServiceErrors.swift */,
 				8087F4C9264006F30073EDEE /* PartsService.swift */,
 				80B79DED2644403800815D69 /* OrderPartService.swift */,
+				80B79DF5264575E200815D69 /* OrderService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				8087F4AC263D8A0D0073EDEE /* Constraints.swift in Sources */,
 				8087F4B6263E79A70073EDEE /* MainPresenter.swift in Sources */,
 				8087F4B2263E76D50073EDEE /* MainInteractor.swift in Sources */,
+				80B79DF6264575E200815D69 /* OrderService.swift in Sources */,
 				8087F4A2263D6DCC0073EDEE /* TitleView.swift in Sources */,
 				8087F4B0263E76460073EDEE /* MainService.swift in Sources */,
 				8087F49E263C55470073EDEE /* MainTabBarController.swift in Sources */,
@@ -504,6 +511,7 @@
 				8087F4A8263D87990073EDEE /* R.generated.swift in Sources */,
 				8087F49A263C46850073EDEE /* AuthService.swift in Sources */,
 				80B79DEE2644403800815D69 /* OrderPartService.swift in Sources */,
+				80B79DF826457A6A00815D69 /* OrdersViewController+tableVIew.swift in Sources */,
 				80B90B15263974A8007E061E /* AppDelegate.swift in Sources */,
 				8087F4BB263EB61F0073EDEE /* PartTableViewCell.swift in Sources */,
 				80B79DE82643EDCA00815D69 /* ShoppingCartTableViewCell.swift in Sources */,

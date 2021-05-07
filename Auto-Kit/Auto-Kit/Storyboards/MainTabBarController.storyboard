@@ -193,6 +193,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Заказы" image="wallet.pass.fill" catalog="system" id="0Lp-Tp-mJf"/>
+                    <connections>
+                        <outlet property="ordersCountLabel" destination="bfB-il-rUa" id="f3B-EG-Zxa"/>
+                        <outlet property="ordersTable" destination="m9U-Ht-tNC" id="Ku8-3r-EP1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gt-pZ-mha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

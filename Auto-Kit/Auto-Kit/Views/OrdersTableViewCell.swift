@@ -35,6 +35,12 @@ class OrdersTableViewCell: UITableViewCell {
     func commonInit(order: Order)
     {
         representingObject = order
-        
+        self.OrderName.text = "Заказ #\(representingObject.id)"
+        self.creationDate.text = representingObject.creationDate
+        self.changeDate.text = representingObject.changeDate
+        self.userName.text = representingObject.userName
+        let priceStr = "\(representingObject.price)"
+        self.price.text = priceStr
+        self.orderStatus.text = representingObject.statusName
     }
 }

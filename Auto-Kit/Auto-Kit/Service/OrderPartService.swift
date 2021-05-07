@@ -48,4 +48,10 @@ class OrderPartService {
         sessionManager.request(urlString, method: .delete)
         print("request on deleting items from shopping cart with strIds \(strOrderPartIds)")
     }
+    
+    func proceedOrderFromInitalState(orderId: Int16, userId: String, access_token: String, completion: () -> Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.orderPartSection + "/perform_order?order_id=\(orderId)&user_ids=\(userId)&access_token=\(access_token)"
+        sessionManager.request(urlString, method: .put)
+        print("request on move order with id \(orderId) to Ordered state")
+    }
 }

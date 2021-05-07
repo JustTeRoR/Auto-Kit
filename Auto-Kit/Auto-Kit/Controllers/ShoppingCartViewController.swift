@@ -35,7 +35,6 @@ class ShoppingCartViewController: UIViewController {
         loadOrderPartsById()
     }
     
-    //TO check if this works
     override func viewWillAppear(_ animated: Bool) {
         loadOrderPartsById()
         DispatchQueue.main.async{
@@ -86,7 +85,14 @@ class ShoppingCartViewController: UIViewController {
     }
     
     @IBAction func placeOrderButtonTapped(_ sender: Any) {
-        
+        if (orderPartList.count != 0) {
+            service.proceedOrderFromInitalState(orderId: orderPartList[0].orderId, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { }
+            orderPartList.removeAll()
+            DispatchQueue.main.async{
+                self.shoppingCartItemsTable.reloadData()
+                self.uiDesignInit()
+            }
+        }
     }
     
     func uiDesignInit() {
