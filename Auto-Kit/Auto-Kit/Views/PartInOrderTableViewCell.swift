@@ -1,0 +1,28 @@
+//
+//  PartInOrderTableViewCell.swift
+//  Auto-Kit
+//
+//  Created by Сергей Павленок on 07.05.2021.
+//  Copyright © 2021 just_terror. All rights reserved.
+//
+
+import UIKit
+
+class PartInOrderTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var serialNumber: UILabel!
+    @IBOutlet weak var count: UILabel!
+    @IBOutlet weak var orderPartStatus: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
+    func commonInit(orderPart: OrderPart?) {
+        self.serialNumber.text = orderPart?.serialNumber
+        self.count.text = String(orderPart?.count ?? 0)
+        self.orderPartStatus.text = orderPart?.orderPartStatusTitle
+    }
+}

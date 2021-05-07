@@ -46,6 +46,5 @@ class ShoppingCartTableViewCell: UITableViewCell {
     @IBAction func utStepperValueChanged(_ sender: UIStepper!) {
         self.count.text = String(Int(sender.value))
         callback?(Int(sender.value))
-        print("UIStepper now has value \(sender.value)")
     }
 }

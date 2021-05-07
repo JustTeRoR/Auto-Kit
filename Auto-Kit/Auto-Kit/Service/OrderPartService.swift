@@ -32,6 +32,20 @@ class OrderPartService {
         }
     }
     
+    func getAllOrderPartsByOrderId(orderId: Int16, userId: String, access_token: String, completion: @escaping ([OrderPart])->Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.orderPartSection+"/by_order_id?order_id=\(orderId)&access_token=\(access_token)&user_ids=\(userId)"
+        sessionManager.request(urlString).response { response in
+            guard let data = response.data else { return }
+            do {
+                let appropriateOrderPartList: [OrderPart] = try JSONDecoder().decode([OrderPart].self, from: data)
+                completion(appropriateOrderPartList)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
     func updateCountInShoppingList(orderPartId: Int16, count: Int8, userId: String, access_token: String, completion: () -> Void) {
         let urlString = ApiConstants.baseUrl + ApiConstants.orderPartSection + "/update_count?order_part_id=\(orderPartId)&count=\(count)&user_ids=\(userId)&access_token=\(access_token)"
         sessionManager.request(urlString, method: .put)

@@ -168,12 +168,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `OrdersTableViewCell`.
     static let ordersTableViewCell = _R.nib._OrdersTableViewCell()
     /// Nib `PartDetailsViewController`.
     static let partDetailsViewController = _R.nib._PartDetailsViewController()
+    /// Nib `PartInOrderTableViewCell`.
+    static let partInOrderTableViewCell = _R.nib._PartInOrderTableViewCell()
     /// Nib `PartTableViewCell`.
     static let partTableViewCell = _R.nib._PartTableViewCell()
     /// Nib `ShoppingCartTableViewCell`.
@@ -192,6 +194,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.partDetailsViewController) instead")
     static func partDetailsViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.partDetailsViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PartInOrderTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.partInOrderTableViewCell) instead")
+    static func partInOrderTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.partInOrderTableViewCell)
     }
     #endif
 
@@ -217,6 +227,10 @@ struct R: Rswift.Validatable {
 
     static func partDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.partDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func partInOrderTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartInOrderTableViewCell? {
+      return R.nib.partInOrderTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartInOrderTableViewCell
     }
 
     static func partTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
@@ -290,6 +304,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "cart.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cart.fill' is used in nib 'PartDetailsViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PartInOrderTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PartInOrderTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartInOrderTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartInOrderTableViewCell
       }
 
       fileprivate init() {}

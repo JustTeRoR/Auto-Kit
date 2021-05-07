@@ -13,6 +13,7 @@ import Alamofire
 class OrdersViewController: UIViewController {
     let sessionManager = SessionManager(delegate:SessionDelegate(), serverTrustPolicyManager:MyServerTrustPolicyManager(policies: [:]))
     var service: OrderService!
+    var orderPartService: OrderPartService!
     
     @IBOutlet weak var ordersCountLabel: UILabel!
     @IBOutlet weak var ordersTable: UITableView!
@@ -26,7 +27,6 @@ class OrdersViewController: UIViewController {
         ordersTable.dataSource = self
         ordersTable.delegate = self
         ordersTable.register(UINib(nibName: "OrdersTableViewCell", bundle: nil),forCellReuseIdentifier: "orderCell")
-        ordersTable.delegate = self
         loadOrdersByUser()
     }
     
@@ -44,6 +44,7 @@ class OrdersViewController: UIViewController {
     func loadOrdersByUser()
     {
         self.service = OrderService(SessionManager: self.sessionManager)
+        self.orderPartService = OrderPartService(SessionManager: self.sessionManager)
         service.getAllOrdersByUserId(userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (orders) in
             self?.orderList = orders
             self?.ordersCountLabel.text = "                                                          Количество ваших заказов: \(self!.orderList.count)"

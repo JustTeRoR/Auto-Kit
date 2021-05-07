@@ -173,19 +173,6 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ev-zX-Yix">
-                        <rect key="frame" x="20" y="118" width="360" height="81"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <attributedString key="attributedText">
-                            <fragment content="serialNumber+Count list+Status of each">
-                                <attributes>
-                                    <font key="NSFont" size="17" name="GillSans-LightItalic"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0z-Mz-fkZ">
                         <rect key="frame" x="20" y="9" width="360" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -199,6 +186,11 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-k1-8Nx">
+                        <rect key="frame" x="15" y="120" width="370" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -206,10 +198,10 @@
                 <outlet property="OrderName" destination="G0z-Mz-fkZ" id="j5w-cG-261"/>
                 <outlet property="changeDate" destination="upx-1H-moS" id="WRV-pu-Jwy"/>
                 <outlet property="creationDate" destination="fa4-Or-yH8" id="68q-pR-wud"/>
+                <outlet property="orderPartInTable" destination="DaT-k1-8Nx" id="EsZ-si-Juo"/>
                 <outlet property="orderStatus" destination="3AZ-wV-5g6" id="n6T-w5-YXt"/>
                 <outlet property="price" destination="ZMu-XE-Ke9" id="YOq-e0-fCw"/>
                 <outlet property="removeOrderButton" destination="cC8-oH-yzK" id="VGg-Zb-r1s"/>
-                <outlet property="serialNumberAndCountsLabel" destination="9Ev-zX-Yix" id="z31-4R-eh2"/>
                 <outlet property="userName" destination="vFj-rs-4fi" id="fET-Id-QKF"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
@@ -217,6 +209,9 @@
     </objects>
     <resources>
         <image name="delete.left.fill" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
