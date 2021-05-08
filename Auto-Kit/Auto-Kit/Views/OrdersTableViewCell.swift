@@ -31,6 +31,7 @@ class OrdersTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
     
     @IBAction func removeOrderButtonClicked(_ sender: Any) {
         callback?(Int(representingObject.id))
+        self.removeOrderButton.isHidden = true
     }
     
     func commonInit(order: Order)

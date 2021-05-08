@@ -18,13 +18,12 @@ extension OrdersViewController: UITableViewDataSource, UITableViewDelegate  {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as! OrdersTableViewCell
         let model = orderList[indexPath.row]
         cell.callback = { (val) in
-            self.service.rejectOrderByUser(orderId: Int16(val), userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { }
+            self.service.rejectOrderByUser(orderId: Int16(val), userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) {  }
             self.loadOrdersByUser()
             DispatchQueue.main.async{
                 self.ordersTable.reloadData()
             }
         }
-        
         orderPartService.getAllOrderPartsByOrderId(orderId: model.id, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!,completion: { [weak self] (orderParts) in
             cell.orderPartsOfOrder = orderParts
         })
