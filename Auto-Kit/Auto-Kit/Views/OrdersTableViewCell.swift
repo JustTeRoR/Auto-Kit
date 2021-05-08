@@ -38,7 +38,10 @@ class OrdersTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
         representingObject = order
         if (representingObject.statusKey == "Cancelled by user") {
             self.removeOrderButton.isHidden = true
+        } else {
+            self.removeOrderButton.isHidden = false
         }
+        
         self.OrderName.text = "Заказ #\(representingObject.id)"
         self.creationDate.text = representingObject.creationDate
         self.changeDate.text = representingObject.changeDate
@@ -47,8 +50,19 @@ class OrdersTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
         self.price.text = priceStr
         self.orderStatus.text = representingObject.statusName
         
+        switch orderStatus.text {
+        case "Отменен пользователем":
+            self.orderStatus.textColor = UIColor.red
+            
+        case "Заказан пользователем":
+            self.orderStatus.textColor = UIColor.systemYellow
+        default:
+            self.orderStatus.textColor = UIColor.black
+        }
+        
         orderPartInTable.allowsSelection = false
         orderPartInTable.register(UINib(nibName: "PartInOrderTableViewCell", bundle: nil),forCellReuseIdentifier: "partInOrderCell")
+        orderPartInTable.backgroundColor = .clear
         orderPartInTable.dataSource = self
         orderPartInTable.delegate = self
         orderPartInTable.reloadData()

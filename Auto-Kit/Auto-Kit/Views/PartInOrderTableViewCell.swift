@@ -24,5 +24,15 @@ class PartInOrderTableViewCell: UITableViewCell {
         self.serialNumber.text = orderPart?.serialNumber
         self.count.text = String(orderPart?.count ?? 0)
         self.orderPartStatus.text = orderPart?.orderPartStatusTitle
+        self.backgroundColor = .clear
+        
+        switch orderPartStatus.text {
+        case "Снят клиентом":
+            self.orderPartStatus.textColor = UIColor.red
+        case "Заказан":
+            self.orderPartStatus.textColor = UIColor.systemYellow
+        default:
+            self.orderPartStatus.textColor = UIColor.black
+        }
     }
 }
