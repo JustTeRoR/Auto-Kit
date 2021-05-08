@@ -15,16 +15,22 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shopCartCell") as! ShoppingCartTableViewCell
+        let model = orderPartList[indexPath.row]
         if selectedRows.contains(indexPath)
         {
-            cell.checkBoxButton.setImage(UIImage(named:"selected"), for: .normal)
+            cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.seal.fill"), for: .normal)
         }
         else
         {
-          cell.checkBoxButton.setImage(UIImage(named:"unselected"), for: .normal)
+          cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.seal"), for: .normal)
         }
         cell.checkBoxButton.tag = indexPath.row
         cell.checkBoxButton.addTarget(self, action: #selector(checkBoxSelection(_:)), for: .touchUpInside)
+        
+        cell.callback = { (val) in
+            self.service.updateCountInShoppingList(orderPartId: model.id, count: Int8(val), userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) {}
+        }
+        cell.commonInit(orderPart: model)
         return cell
     }
     @objc func checkBoxSelection(_ sender:UIButton)
@@ -39,5 +45,9 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
           self.selectedRows.append(selectedIndexPath)
         }
         self.shoppingCartItemsTable.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 125
     }
 }

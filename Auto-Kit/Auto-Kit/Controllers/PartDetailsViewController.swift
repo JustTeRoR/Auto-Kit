@@ -10,13 +10,6 @@ import UIKit
 import Alamofire
 
 class PartDetailsViewController: UIViewController {
-    
-    open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
-        open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
-            return ServerTrustPolicy.disableEvaluation
-        }
-    }
-
     let sessionManager = SessionManager(delegate:SessionDelegate(), serverTrustPolicyManager:MyServerTrustPolicyManager(policies: [:]))
 
     // MARK: - IBOutlets
@@ -47,7 +40,8 @@ class PartDetailsViewController: UIViewController {
     }
 
     @IBAction func addToCartButtonPush(_ sender: Any) {
-        
+        //FIXME:: configure new view to let user select partProvider Dynamically
+        AddProductToShoppingCart(partId: partModel.id, partProviderId: 1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +59,12 @@ class PartDetailsViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = nil
     }
     
-    // MARK: - function for loading parts by serial number
+    func AddProductToShoppingCart(partId:Int16, partProviderId:Int16) {
+        let service = OrderPartService(SessionManager: self.sessionManager)
+        service.AddProductToShoppingCart(partId: partId, partProviderId: partProviderId, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { })
+    }
+    
+    // MARK: - function for loading replacement parts by ID
     func loadReplacementPartsById(part_id1: Int16)
     {
         let service = PartsService(SessionManager: self.sessionManager)

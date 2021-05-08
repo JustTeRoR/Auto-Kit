@@ -18,4 +18,6 @@ enum ApiConstants {
     static let baseUrl = "https://localhost:8443/auto_kit/api/"
     static let partSection = "part"
     static let replaceabilitySection = "replaceability"
+    static let orderPartSection = "order_part"
+    static let orderSection = "order"
 }

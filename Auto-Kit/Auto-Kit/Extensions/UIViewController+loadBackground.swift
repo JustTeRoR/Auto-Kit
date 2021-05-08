@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 extension UIViewController {
+    
+    open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
+        open override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+            return ServerTrustPolicy.disableEvaluation
+        }
+    }
     
     func loadBackground() {
         let backgroundImageView = UIImageView(image: UIImage(named: "background"))

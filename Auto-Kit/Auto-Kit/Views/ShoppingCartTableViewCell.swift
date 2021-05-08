@@ -9,7 +9,7 @@
 import UIKit
 
 class ShoppingCartTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var serialNumber: UILabel!
     @IBOutlet weak var count: UILabel!
     @IBOutlet weak var provider: UILabel!
@@ -18,17 +18,33 @@ class ShoppingCartTableViewCell: UITableViewCell {
     @IBOutlet weak var labourPrice: UILabel!
     @IBOutlet weak var checkBoxButton: UIButton!
     @IBOutlet weak var stepperForCount: UIStepper!
+    var representingObject: OrderPart!
     
+    // "callback" closure - set my controller in cellForRowAt
+    var callback: ((Int) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        selectionStyle = .none
     }
     
+    func commonInit(orderPart: OrderPart)
+    {
+        representingObject = orderPart
+        stepperForCount.minimumValue = 1
+        stepperForCount.value = Double(orderPart.count)
+        self.serialNumber.text = orderPart.serialNumber
+        self.count.text = String(orderPart.count)
+        self.provider.text = orderPart.partProviderName
+        self.orderPartStatus.text = orderPart.orderPartStatusTitle
+        let purchasePriceString = "\(orderPart.purchasePrice)"
+        self.purchasePrice.text = purchasePriceString
+        let labourPriceString = "\(orderPart.labourPrice)"
+        self.labourPrice.text = labourPriceString
+    }
+    
+    @IBAction func utStepperValueChanged(_ sender: UIStepper!) {
+        self.count.text = String(Int(sender.value))
+        callback?(Int(sender.value))
+    }
 }
