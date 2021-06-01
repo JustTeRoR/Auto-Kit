@@ -20,4 +20,6 @@ enum ApiConstants {
     static let replaceabilitySection = "replaceability"
     static let orderPartSection = "order_part"
     static let orderSection = "order"
+    static let vinSection = "vin"
+    static let modelYearSection = "model_year"
 }

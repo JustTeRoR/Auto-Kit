@@ -168,8 +168,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
+    /// Nib `AutomobileDetailsViewController`.
+    static let automobileDetailsViewController = _R.nib._AutomobileDetailsViewController()
+    /// Nib `CarTableViewCell`.
+    static let carTableViewCell = _R.nib._CarTableViewCell()
     /// Nib `OrdersTableViewCell`.
     static let ordersTableViewCell = _R.nib._OrdersTableViewCell()
     /// Nib `PartDetailsViewController`.
@@ -180,6 +184,22 @@ struct R: Rswift.Validatable {
     static let partTableViewCell = _R.nib._PartTableViewCell()
     /// Nib `ShoppingCartTableViewCell`.
     static let shoppingCartTableViewCell = _R.nib._ShoppingCartTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AutomobileDetailsViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.automobileDetailsViewController) instead")
+    static func automobileDetailsViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.automobileDetailsViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CarTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.carTableViewCell) instead")
+    static func carTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.carTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "OrdersTableViewCell", in: bundle)`
@@ -220,6 +240,14 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.shoppingCartTableViewCell)
     }
     #endif
+
+    static func automobileDetailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.automobileDetailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func carTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CarTableViewCell? {
+      return R.nib.carTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CarTableViewCell
+    }
 
     static func ordersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OrdersTableViewCell? {
       return R.nib.ordersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OrdersTableViewCell
@@ -273,6 +301,28 @@ struct _R: Rswift.Validatable {
       try _OrdersTableViewCell.validate()
       try _PartDetailsViewController.validate()
       try _ShoppingCartTableViewCell.validate()
+    }
+
+    struct _AutomobileDetailsViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AutomobileDetailsViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CarTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CarTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CarTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CarTableViewCell
+      }
+
+      fileprivate init() {}
     }
 
     struct _OrdersTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
