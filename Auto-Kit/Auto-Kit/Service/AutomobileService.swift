@@ -20,7 +20,8 @@ class AutomobileService {
     
     func parseVinNumberIntoCarDetails(vin: String, userId: String, access_token: String, completion: @escaping (Automobile)->Void) {
         let urlString = ApiConstants.baseUrl + ApiConstants.vinSection + "/parseVin?user_ids=\(userId)&access_token=\(access_token)&vin=\(vin)"
-        sessionManager.request(urlString).response { response in
+        sessionManager.request(urlString, method: .post).response { response in
+            print(response)
             guard let data = response.data else { return }
             do {
                 let parsedAutomobile: Automobile = try JSONDecoder().decode(Automobile.self, from: data)
@@ -35,7 +36,6 @@ class AutomobileService {
     func parseAllUsersAutomobiles(userId: String, access_token: String, completion: @escaping ([Automobile])->Void) {
         let urlString = ApiConstants.baseUrl + ApiConstants.modelYearSection + "/by_user_id?user_ids=\(userId)&access_token=\(access_token)"
         sessionManager.request(urlString).response { response in
-            print(response)
             guard let data = response.data else { return }
             do {
                 let parsedAutomobileList: [Automobile] = try JSONDecoder().decode([Automobile].self, from: data)

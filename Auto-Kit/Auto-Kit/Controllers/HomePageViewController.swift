@@ -23,6 +23,7 @@ class HomePageViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.service = AutomobileService(SessionManager: self.sessionManager)
         uiDesignInit()
         carListTable.dataSource = self
         carListTable.delegate = self
@@ -43,7 +44,6 @@ class HomePageViewController : UIViewController {
     }
     
     func loadAutomobiles() {
-        self.service = AutomobileService(SessionManager: self.sessionManager)
         service.parseAllUsersAutomobiles(userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (automobiles) in
             self?.autoList = automobiles
             self?.carListTable.reloadData();
@@ -51,6 +51,13 @@ class HomePageViewController : UIViewController {
     }
     
     @IBAction func addNewUserAuto(_ sender: Any) {
+        service.parseVinNumberIntoCarDetails(vin: inputTextVin.text ?? "", userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { [weak self] (automobile) in
+            self?.autoList.append(automobile)
+            DispatchQueue.main.async{
+                self?.carListTable.reloadData()
+            }
+        }
         inputTextVin.text?.removeAll()
+        
     }
 }
