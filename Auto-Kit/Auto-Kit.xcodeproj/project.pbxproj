@@ -16,6 +16,21 @@
 		801BC8C126656A37008A5EF1 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8BF26656A37008A5EF1 /* CarTableViewCell.xib */; };
 		801BC8C42665734A008A5EF1 /* AutomobileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8C22665734A008A5EF1 /* AutomobileDetailsViewController.swift */; };
 		801BC8C52665734A008A5EF1 /* AutomobileDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8C32665734A008A5EF1 /* AutomobileDetailsViewController.xib */; };
+		801BC8CC266A5217008A5EF1 /* CategorieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8CA266A5217008A5EF1 /* CategorieTableViewCell.swift */; };
+		801BC8CD266A5217008A5EF1 /* CategorieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8CB266A5217008A5EF1 /* CategorieTableViewCell.xib */; };
+		801BC8CF266A52C5008A5EF1 /* СategoriesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8CE266A52C5008A5EF1 /* СategoriesViewController+TableView.swift */; };
+		801BC8D1266A545B008A5EF1 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8D0266A545B008A5EF1 /* Categorie.swift */; };
+		801BC8D4266A6599008A5EF1 /* PartsByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8D2266A6599008A5EF1 /* PartsByCategoryViewController.swift */; };
+		801BC8D5266A6599008A5EF1 /* PartsByCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8D3266A6599008A5EF1 /* PartsByCategoryViewController.xib */; };
+		801BC8D7266A667C008A5EF1 /* CategorieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8D6266A667C008A5EF1 /* CategorieService.swift */; };
+		801BC8DA266A7019008A5EF1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8D8266A7019008A5EF1 /* CategoriesViewController.swift */; };
+		801BC8DB266A7019008A5EF1 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8D9266A7019008A5EF1 /* CategoriesViewController.xib */; };
+		801BC8DE266BA473008A5EF1 /* CategoriePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8DD266BA473008A5EF1 /* CategoriePart.swift */; };
+		801BC8E0266BA8D1008A5EF1 /* CategoriePartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8DF266BA8D1008A5EF1 /* CategoriePartService.swift */; };
+		801BC8E3266BAAE0008A5EF1 /* CategoriePartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8E1266BAAE0008A5EF1 /* CategoriePartTableViewCell.swift */; };
+		801BC8E4266BAAE0008A5EF1 /* CategoriePartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801BC8E2266BAAE0008A5EF1 /* CategoriePartTableViewCell.xib */; };
+		801BC8E6266BAD27008A5EF1 /* PartsByCategoryViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8E5266BAD27008A5EF1 /* PartsByCategoryViewController+TableView.swift */; };
+		801BC8E8266BBACD008A5EF1 /* Vin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BC8E7266BBACD008A5EF1 /* Vin.swift */; };
 		802660CA2639848400CDC1AD /* OrderPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802660C92639848400CDC1AD /* OrderPart.swift */; };
 		802660D52639962D00CDC1AD /* UIViewController+loadBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802660D42639962D00CDC1AD /* UIViewController+loadBackground.swift */; };
 		8087F4772639AB000073EDEE /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8087F4762639AB000073EDEE /* MainTabBarController.storyboard */; };
@@ -88,6 +103,21 @@
 		801BC8BF26656A37008A5EF1 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
 		801BC8C22665734A008A5EF1 /* AutomobileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomobileDetailsViewController.swift; sourceTree = "<group>"; };
 		801BC8C32665734A008A5EF1 /* AutomobileDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutomobileDetailsViewController.xib; sourceTree = "<group>"; };
+		801BC8CA266A5217008A5EF1 /* CategorieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieTableViewCell.swift; sourceTree = "<group>"; };
+		801BC8CB266A5217008A5EF1 /* CategorieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorieTableViewCell.xib; sourceTree = "<group>"; };
+		801BC8CE266A52C5008A5EF1 /* СategoriesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СategoriesViewController+TableView.swift"; sourceTree = "<group>"; };
+		801BC8D0266A545B008A5EF1 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		801BC8D2266A6599008A5EF1 /* PartsByCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsByCategoryViewController.swift; sourceTree = "<group>"; };
+		801BC8D3266A6599008A5EF1 /* PartsByCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartsByCategoryViewController.xib; sourceTree = "<group>"; };
+		801BC8D6266A667C008A5EF1 /* CategorieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieService.swift; sourceTree = "<group>"; };
+		801BC8D8266A7019008A5EF1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		801BC8D9266A7019008A5EF1 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		801BC8DD266BA473008A5EF1 /* CategoriePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriePart.swift; sourceTree = "<group>"; };
+		801BC8DF266BA8D1008A5EF1 /* CategoriePartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriePartService.swift; sourceTree = "<group>"; };
+		801BC8E1266BAAE0008A5EF1 /* CategoriePartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriePartTableViewCell.swift; sourceTree = "<group>"; };
+		801BC8E2266BAAE0008A5EF1 /* CategoriePartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriePartTableViewCell.xib; sourceTree = "<group>"; };
+		801BC8E5266BAD27008A5EF1 /* PartsByCategoryViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PartsByCategoryViewController+TableView.swift"; sourceTree = "<group>"; };
+		801BC8E7266BBACD008A5EF1 /* Vin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vin.swift; sourceTree = "<group>"; };
 		802660C92639848400CDC1AD /* OrderPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPart.swift; sourceTree = "<group>"; };
 		802660D42639962D00CDC1AD /* UIViewController+loadBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadBackground.swift"; sourceTree = "<group>"; };
 		8087F4762639AB000073EDEE /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
@@ -194,6 +224,8 @@
 				80B79DEA264437C700815D69 /* ShoppingCartView+TableView.swift */,
 				80B79DF726457A6A00815D69 /* OrdersViewController+tableVIew.swift */,
 				801BC8B626654EFE008A5EF1 /* HomePageViewController+TableView.swift */,
+				801BC8CE266A52C5008A5EF1 /* СategoriesViewController+TableView.swift */,
+				801BC8E5266BAD27008A5EF1 /* PartsByCategoryViewController+TableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +254,10 @@
 				801BC8B4266542ED008A5EF1 /* HomePageViewController.swift */,
 				801BC8C22665734A008A5EF1 /* AutomobileDetailsViewController.swift */,
 				801BC8C32665734A008A5EF1 /* AutomobileDetailsViewController.xib */,
+				801BC8D2266A6599008A5EF1 /* PartsByCategoryViewController.swift */,
+				801BC8D3266A6599008A5EF1 /* PartsByCategoryViewController.xib */,
+				801BC8D8266A7019008A5EF1 /* CategoriesViewController.swift */,
+				801BC8D9266A7019008A5EF1 /* CategoriesViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +329,9 @@
 				8087F4B3263E77840073EDEE /* MainModels.swift */,
 				8087F4C1263F4C790073EDEE /* Part.swift */,
 				801BC8B826655156008A5EF1 /* Automobile.swift */,
+				801BC8D0266A545B008A5EF1 /* Categorie.swift */,
+				801BC8DD266BA473008A5EF1 /* CategoriePart.swift */,
+				801BC8E7266BBACD008A5EF1 /* Vin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +351,10 @@
 				80B79DFA26458DFD00815D69 /* PartInOrderTableViewCell.xib */,
 				801BC8BE26656A37008A5EF1 /* CarTableViewCell.swift */,
 				801BC8BF26656A37008A5EF1 /* CarTableViewCell.xib */,
+				801BC8CA266A5217008A5EF1 /* CategorieTableViewCell.swift */,
+				801BC8CB266A5217008A5EF1 /* CategorieTableViewCell.xib */,
+				801BC8E1266BAAE0008A5EF1 /* CategoriePartTableViewCell.swift */,
+				801BC8E2266BAAE0008A5EF1 /* CategoriePartTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +380,8 @@
 				80B79DED2644403800815D69 /* OrderPartService.swift */,
 				80B79DF5264575E200815D69 /* OrderService.swift */,
 				801BC8BA266554C4008A5EF1 /* AutomobileService.swift */,
+				801BC8D6266A667C008A5EF1 /* CategorieService.swift */,
+				801BC8DF266BA8D1008A5EF1 /* CategoriePartService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -432,7 +477,11 @@
 				80B79DF4264551AC00815D69 /* OrdersTableViewCell.xib in Resources */,
 				8087F4C6263FFB7F0073EDEE /* PartDetailsViewController.xib in Resources */,
 				8087F4BC263EB61F0073EDEE /* PartTableViewCell.xib in Resources */,
+				801BC8DB266A7019008A5EF1 /* CategoriesViewController.xib in Resources */,
+				801BC8E4266BAAE0008A5EF1 /* CategoriePartTableViewCell.xib in Resources */,
 				801BC8C52665734A008A5EF1 /* AutomobileDetailsViewController.xib in Resources */,
+				801BC8CD266A5217008A5EF1 /* CategorieTableViewCell.xib in Resources */,
+				801BC8D5266A6599008A5EF1 /* PartsByCategoryViewController.xib in Resources */,
 				80B79DE92643EDCA00815D69 /* ShoppingCartTableViewCell.xib in Resources */,
 				80B90B1E263974A9007E061E /* Assets.xcassets in Resources */,
 				8087F47B2639C1ED0073EDEE /* LoginViewController.storyboard in Resources */,
@@ -519,31 +568,42 @@
 				8087F4AA263D88420073EDEE /* WebImageView.swift in Sources */,
 				80B90B4226397FF2007E061E /* Order.swift in Sources */,
 				80B90B3A263974FB007E061E /* User.swift in Sources */,
+				801BC8E8266BBACD008A5EF1 /* Vin.swift in Sources */,
 				8087F4AC263D8A0D0073EDEE /* Constraints.swift in Sources */,
 				801BC8C42665734A008A5EF1 /* AutomobileDetailsViewController.swift in Sources */,
+				801BC8E3266BAAE0008A5EF1 /* CategoriePartTableViewCell.swift in Sources */,
 				80B79DFB26458DFD00815D69 /* PartInOrderTableViewCell.swift in Sources */,
 				8087F4B6263E79A70073EDEE /* MainPresenter.swift in Sources */,
 				8087F4B2263E76D50073EDEE /* MainInteractor.swift in Sources */,
+				801BC8CF266A52C5008A5EF1 /* СategoriesViewController+TableView.swift in Sources */,
+				801BC8D1266A545B008A5EF1 /* Categorie.swift in Sources */,
 				80B79DF6264575E200815D69 /* OrderService.swift in Sources */,
 				8087F4A2263D6DCC0073EDEE /* TitleView.swift in Sources */,
 				8087F4B0263E76460073EDEE /* MainService.swift in Sources */,
+				801BC8CC266A5217008A5EF1 /* CategorieTableViewCell.swift in Sources */,
 				8087F49E263C55470073EDEE /* MainTabBarController.swift in Sources */,
+				801BC8D7266A667C008A5EF1 /* CategorieService.swift in Sources */,
 				8087F4AE263D8D830073EDEE /* NetworkDataFetcher.swift in Sources */,
 				801BC8C026656A37008A5EF1 /* CarTableViewCell.swift in Sources */,
 				8087F4A4263D825E0073EDEE /* UserResponse.swift in Sources */,
+				801BC8DA266A7019008A5EF1 /* CategoriesViewController.swift in Sources */,
 				8087F4C0263F2E0D0073EDEE /* PartSearchViewController+tableView.swift in Sources */,
 				802660CA2639848400CDC1AD /* OrderPart.swift in Sources */,
 				80B79DEB264437C700815D69 /* ShoppingCartView+TableView.swift in Sources */,
+				801BC8DE266BA473008A5EF1 /* CategoriePart.swift in Sources */,
 				80B90B19263974A8007E061E /* ViewController.swift in Sources */,
 				8087F4C82640067B0073EDEE /* ServiceErrors.swift in Sources */,
 				8087F49C263C54010073EDEE /* UIViewController+Storyboard.swift in Sources */,
 				801BC8B5266542ED008A5EF1 /* HomePageViewController.swift in Sources */,
 				802660D52639962D00CDC1AD /* UIViewController+loadBackground.swift in Sources */,
+				801BC8E6266BAD27008A5EF1 /* PartsByCategoryViewController+TableView.swift in Sources */,
 				80B79DE526433D2700815D69 /* ShoppingCartViewController.swift in Sources */,
 				8087F4C5263FFB7F0073EDEE /* PartDetailsViewController.swift in Sources */,
 				8087F4CA264006F30073EDEE /* PartsService.swift in Sources */,
 				8087F50A264302AB0073EDEE /* PartDetailsViewController+tableView.swift in Sources */,
 				80B90B4026397E89007E061E /* ApiConstants.swift in Sources */,
+				801BC8E0266BA8D1008A5EF1 /* CategoriePartService.swift in Sources */,
+				801BC8D4266A6599008A5EF1 /* PartsByCategoryViewController.swift in Sources */,
 				80B79DF3264551AC00815D69 /* OrdersTableViewCell.swift in Sources */,
 				8087F4A8263D87990073EDEE /* R.generated.swift in Sources */,
 				8087F49A263C46850073EDEE /* AuthService.swift in Sources */,

@@ -33,6 +33,21 @@ class AutomobileService {
         }
     }
     
+    func parseVinNumberToVinEntity(vin:String, userId: String, access_token: String, completion: @escaping (Vin)->Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.vinSection + "/by_vin?vin=\(vin)&user_ids=\(userId)&access_token=\(access_token)"
+        sessionManager.request(urlString).response { response in
+            print(response)
+            guard let data = response.data else { return }
+            do {
+                let parsedAutomobileVin: Vin = try JSONDecoder().decode(Vin.self, from: data)
+                completion(parsedAutomobileVin)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
     func parseAllUsersAutomobiles(userId: String, access_token: String, completion: @escaping ([Automobile])->Void) {
         let urlString = ApiConstants.baseUrl + ApiConstants.modelYearSection + "/by_user_id?user_ids=\(userId)&access_token=\(access_token)"
         sessionManager.request(urlString).response { response in

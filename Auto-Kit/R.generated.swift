@@ -168,12 +168,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `AutomobileDetailsViewController`.
     static let automobileDetailsViewController = _R.nib._AutomobileDetailsViewController()
     /// Nib `CarTableViewCell`.
     static let carTableViewCell = _R.nib._CarTableViewCell()
+    /// Nib `CategoriePartTableViewCell`.
+    static let categoriePartTableViewCell = _R.nib._CategoriePartTableViewCell()
+    /// Nib `CategorieTableViewCell`.
+    static let categorieTableViewCell = _R.nib._CategorieTableViewCell()
+    /// Nib `CategoriesViewController`.
+    static let categoriesViewController = _R.nib._CategoriesViewController()
     /// Nib `OrdersTableViewCell`.
     static let ordersTableViewCell = _R.nib._OrdersTableViewCell()
     /// Nib `PartDetailsViewController`.
@@ -182,6 +188,8 @@ struct R: Rswift.Validatable {
     static let partInOrderTableViewCell = _R.nib._PartInOrderTableViewCell()
     /// Nib `PartTableViewCell`.
     static let partTableViewCell = _R.nib._PartTableViewCell()
+    /// Nib `PartsByCategoryViewController`.
+    static let partsByCategoryViewController = _R.nib._PartsByCategoryViewController()
     /// Nib `ShoppingCartTableViewCell`.
     static let shoppingCartTableViewCell = _R.nib._ShoppingCartTableViewCell()
 
@@ -198,6 +206,30 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.carTableViewCell) instead")
     static func carTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.carTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategoriePartTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categoriePartTableViewCell) instead")
+    static func categoriePartTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categoriePartTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategorieTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categorieTableViewCell) instead")
+    static func categorieTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categorieTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategoriesViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categoriesViewController) instead")
+    static func categoriesViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categoriesViewController)
     }
     #endif
 
@@ -234,6 +266,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PartsByCategoryViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.partsByCategoryViewController) instead")
+    static func partsByCategoryViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.partsByCategoryViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ShoppingCartTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.shoppingCartTableViewCell) instead")
     static func shoppingCartTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -247,6 +287,18 @@ struct R: Rswift.Validatable {
 
     static func carTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CarTableViewCell? {
       return R.nib.carTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CarTableViewCell
+    }
+
+    static func categoriePartTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoriePartTableViewCell? {
+      return R.nib.categoriePartTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoriePartTableViewCell
+    }
+
+    static func categorieTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategorieTableViewCell? {
+      return R.nib.categorieTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategorieTableViewCell
+    }
+
+    static func categoriesViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.categoriesViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func ordersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> OrdersTableViewCell? {
@@ -263,6 +315,10 @@ struct R: Rswift.Validatable {
 
     static func partTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
       return R.nib.partTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+    }
+
+    static func partsByCategoryViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.partsByCategoryViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func shoppingCartTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ShoppingCartTableViewCell? {
@@ -298,6 +354,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _CategorieTableViewCell.validate()
       try _OrdersTableViewCell.validate()
       try _PartDetailsViewController.validate()
       try _ShoppingCartTableViewCell.validate()
@@ -320,6 +377,45 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CarTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CarTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CategoriePartTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CategoriePartTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoriePartTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoriePartTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CategorieTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CategorieTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategorieTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategorieTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "folder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'folder' is used in nib 'CategorieTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CategoriesViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CategoriesViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -376,6 +472,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PartTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PartTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PartsByCategoryViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PartsByCategoryViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

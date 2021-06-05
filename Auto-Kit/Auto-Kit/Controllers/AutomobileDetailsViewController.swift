@@ -63,6 +63,8 @@ class AutomobileDetailsViewController: UIViewController {
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
-        
+        let categoriesView = CategoriesViewController()
+        categoriesView.autoModel = self.autoModel
+        navigationController?.pushViewController(categoriesView, animated: true)
     }
 }
