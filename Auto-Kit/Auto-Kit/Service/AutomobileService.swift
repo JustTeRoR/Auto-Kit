@@ -61,4 +61,10 @@ class AutomobileService {
             
         }
     }
+    
+    func deleteAutomobileByVin(vin: String, userId: String, access_token: String, completion: () -> Void) {
+        let urlString = ApiConstants.baseUrl + ApiConstants.vinSection + "/delete_by_vin?vin=\(vin)&user_ids=\(userId)&access_token=\(access_token)"
+        sessionManager.request(urlString, method: .delete)
+        print("request on deleting car with vin \(vin)")
+    }
 }

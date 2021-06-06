@@ -32,6 +32,7 @@ class HomePageViewController : UIViewController {
         loadAutomobiles()
     }
     
+    
     func uiDesignInit() {
         addVINButton.layer.borderWidth = 1
         addVINButton.layer.borderColor = UIColor.orange.cgColor
@@ -49,6 +50,11 @@ class HomePageViewController : UIViewController {
             self?.carListTable.reloadData();
         })
     }
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async{
+            self.carListTable.reloadData()
+        }
+    }
     
     @IBAction func addNewUserAuto(_ sender: Any) {
         service.parseVinNumberIntoCarDetails(vin: inputTextVin.text ?? "", userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) { [weak self] (automobile) in
@@ -58,6 +64,15 @@ class HomePageViewController : UIViewController {
             }
         }
         inputTextVin.text?.removeAll()
-        
+    }
+    
+    func removeAutoByVin(vin: String, index:Int) {
+        self.autoList.remove(at: index)
+        self.service.deleteAutomobileByVin(vin: vin, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!) {
+           
+        }
+        DispatchQueue.main.async {
+            self.carListTable.reloadData()
+        }
     }
 }

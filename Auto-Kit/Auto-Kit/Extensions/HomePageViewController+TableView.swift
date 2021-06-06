@@ -21,6 +21,7 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate  {
         let selectedAutoDetails = AutomobileDetailsViewController()
         selectedAutoDetails.autoModel = autoList[indexPath.row]
         navigationController?.pushViewController(selectedAutoDetails, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -30,6 +31,10 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! CarTableViewCell
         let model = autoList[indexPath.row]
+        
+        cell.callback = { () in
+            self.removeAutoByVin(vin: model.vin, index: indexPath.row)
+        }
         cell.commonInit(make: model.make, model: model.model, engine: model.engine, style: model.style, vin: model.vin, year: model.year)
         return cell
     }

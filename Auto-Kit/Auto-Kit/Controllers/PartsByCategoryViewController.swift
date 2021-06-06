@@ -30,8 +30,11 @@ class PartsByCategoryViewController: UIViewController {
         categoryPartsTable.register(UINib(nibName: "CategoriePartTableViewCell", bundle: nil),forCellReuseIdentifier: "categoryPartCell")
         categoryPartsTable.delegate = self
         categoryPartsTable.backgroundColor = .none
-        //loadVinEntity()
-        loadPartsByCategory()
+        let automobileService = AutomobileService(SessionManager: self.sessionManager)
+        automobileService.parseVinNumberToVinEntity(vin: autoModel.vin, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (vin) in
+            self?.vinModel = vin
+            self?.loadPartsByCategory()
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,18 +52,10 @@ class PartsByCategoryViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = nil
     }
     
-    func loadVinEntity() {
-        let automobileService = AutomobileService(SessionManager: self.sessionManager)
-        automobileService.parseVinNumberToVinEntity(vin: autoModel.vin, userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (vin) in
-            self?.vinModel = vin
-        })
-    }
-    
     func loadPartsByCategory()
     {
         let service = CategoriePartService(SessionManager: self.sessionManager)
-        //vinModel.modelYearID
-        service.getAllPartsByCategorie(categorieId: categoryModel.id, modelAutomobileId: 7,  userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (parts) in
+        service.getAllPartsByCategorie(categorieId: categoryModel.id, modelAutomobileId: vinModel.modelYearID,  userId: String(AppDelegate.shared().authService.userId!), access_token: AppDelegate.shared().authService.token!, completion: { [weak self] (parts) in
             self?.categoriePartList = parts
             self?.categoryPartsTable.reloadData()
         })

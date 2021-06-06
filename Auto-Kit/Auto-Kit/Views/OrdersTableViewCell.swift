@@ -37,7 +37,7 @@ class OrdersTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
     func commonInit(order: Order)
     {
         representingObject = order
-        if (representingObject.statusKey == "Cancelled by user") {
+        if (representingObject.statusKey == "Cancelled by user" || representingObject.statusKey == "Ready to collect") {
             self.removeOrderButton.isHidden = true
         } else {
             self.removeOrderButton.isHidden = false
@@ -57,6 +57,8 @@ class OrdersTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
             
         case "Заказан пользователем":
             self.orderStatus.textColor = UIColor.systemYellow
+        case "Доставлен в пункт выдачи":
+            self.orderStatus.textColor = UIColor.green
         default:
             self.orderStatus.textColor = UIColor.black
         }
