@@ -31,6 +31,8 @@ class PartInOrderTableViewCell: UITableViewCell {
             self.orderPartStatus.textColor = UIColor.red
         case "Заказан":
             self.orderPartStatus.textColor = UIColor.systemYellow
+        case "Получен в пункт выдачи":
+            self.orderPartStatus.textColor = UIColor.green
         default:
             self.orderPartStatus.textColor = UIColor.black
         }
